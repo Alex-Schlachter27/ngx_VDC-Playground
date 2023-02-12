@@ -1,0 +1,28 @@
+<div id="home-container">
+
+    <!-- SHOW MENU -->
+    <div *ngIf="!selectedDemo" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px"
+        style="height: inherit;">
+
+        <h1>VDC Angular Playground</h1>
+        <h2>Welcome to the VDC playground. Please choose an demo 😊</h2>
+
+        <!-- Examples -->
+        <div class="card-container" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px"
+            fxLayoutAlign="flex-start">
+
+            <div *ngFor="let item of demos" class="card" fxFlex="0 1 calc(33.3% - 32px)"
+                fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" fxLayout="row"
+                fxLayoutAlign="space-between center" fxLayoutGap="5px">
+
+                <button mat-stroked-button style="width: 100%;" [routerLink]="item.route">
+                    {{item.text}}
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
